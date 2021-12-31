@@ -1,0 +1,46 @@
+// Graphical variables
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+
+// External libraries
+@import "bootstrap/scss/bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// Your CSS partials
+@import "components/index";
+@import "pages/index";
+
+
+.container{
+    width: 1080px;
+    margin: 0 auto;
+}
+
+.index-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flats-box li{
+    list-style: none;
+}
+
+.flats-box{
+    height: 400px;
+    width: 300px;
+    margin: 16px;
+    border-radius: 24px;
+}
+
+div#flats-info{
+    margin-top: 8px
+}
+
+.flats-box img{
+    height: 300px;
+    width: 100%;
+    border-radius: 24px;
+}

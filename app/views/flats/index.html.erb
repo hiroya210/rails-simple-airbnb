@@ -1,0 +1,24 @@
+<div class="index-container">
+  
+    <% @flats.each do |flat| %>
+        <div class="flats-box">
+          <%= link_to flat_path(flat) do %>
+            <div>
+              <%= image_tag ("https://loremflickr.com/320/240/#{["room", "apartment", "house"].sample}") %>
+            </div>
+            <div  id="flat-info">
+              <% if flat.name.length > 15 %>
+                <p><%= flat.name.first(15) %>...
+              <% end %>
+                ￥<%= flat.price_per_night %> / night</p>
+            </div>
+          <% end %>
+        </div>
+    <% end %>
+           
+           
+ 
+</div>
+    <%= link_to "Add new Flat", new_flat_path %>
+</div>
+

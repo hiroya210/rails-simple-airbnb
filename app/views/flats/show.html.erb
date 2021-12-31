@@ -1,0 +1,12 @@
+<div class="show-container">
+    <%= @flat.name %>
+    <%= @flat.address %>
+    <%= @flat.description %>
+    <%= @flat.price_per_night %>
+    <%= @flat.number_of_guest %>
+    
+    <%= link_to "Edit Flat info", edit_flat_path(@flat) %>
+    <%= link_to "Delete this Flat", flat_path(@flat), method: :delete, data: { confirm: "Are your sure?" } %>
+    <%= link_to "Back to main", flats_path %>
+</div>
+
