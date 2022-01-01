@@ -7,6 +7,8 @@ class FlatsController < ApplicationController
     end
 
     def show
+      @image = "../../assets/#{@flat.image}"
+      @lorem = "https://loremflickr.com/320/240/house" 
     end
 
     def new
@@ -32,13 +34,15 @@ class FlatsController < ApplicationController
     end
 
     def destroy
-      @flats.destroy
+      @flat.destroy
+
+      redirect_to flats_path
     end
 
   private
 
     def flats_params
-      params.required(:flat).permit(:name, :address, :description, :price_per_night, :number_of_guest)
+      params.required(:flat).permit(:name, :address, :description, :price_per_night, :number_of_guest, :image)
     end
 
 

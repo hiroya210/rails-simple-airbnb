@@ -1,12 +1,41 @@
 <div class="show-container">
-    <%= @flat.name %>
-    <%= @flat.address %>
-    <%= @flat.description %>
-    <%= @flat.price_per_night %>
-    <%= @flat.number_of_guest %>
-    
-    <%= link_to "Edit Flat info", edit_flat_path(@flat) %>
-    <%= link_to "Delete this Flat", flat_path(@flat), method: :delete, data: { confirm: "Are your sure?" } %>
-    <%= link_to "Back to main", flats_path %>
+  <div id="flat-image" 
+  style="background-image: url( <% if @image.include? ".jpg" %> 
+  <%= @image  %>
+  <% else %>
+  <%= @lorem %>
+  <% end %> )">
+  <div class="flat-name">
+    <div>
+        <h2><%= @flat.name %></h2>
+        <p><%= @flat.address %></p>
+        <%= link_to "Edit", edit_flat_path(@flat), class: "btn btn-primary" %>
+        <%= link_to "Delete", flat_path(@flat), method: :delete, data: { confirm: "Are your sure?" }, class: "btn btn-danger" %>
+    </div>
+  </div>
+  </div>
+  <div class="flat-information">
+    <div class="flat-description">
+    <h3>About this Flat</h3>
+        <p><%= @flat.description %></p>
+    </div>
+    <div class="flat-price">
+        <p style="font-size: 28px;">￥<%= @flat.price_per_night %> <small style="font-size: 16px;">/ night</small></p>
+        <div class="date-form">
+        <div>
+            <label for="checkin" style="display:block;">Check-in</label>
+            <input type="date" name="checkin" value="2022-07-22">
+        </div>
+        <div>
+            <label for="checkout" style="display:block;">Checkout</label>
+            <input type="date" name="checkout" value="2022-07-22">
+        </div>
+        </div>
+        <br>
+        <p>Max Guest: <%= @flat.number_of_guest %></p>
+        <div>
+            <input type="submit" name="reserve" value="Reserve" class="btn btn-primary">
+        </div>
+    </div>
+  </div>
 </div>
-

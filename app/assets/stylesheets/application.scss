@@ -13,15 +13,103 @@
 @import "pages/index";
 
 
-.container{
-    width: 1080px;
-    margin: 0 auto;
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 0;
+    text-align: center;
+    padding: 16px 80px;
+    box-shadow: 1px 1px 10px rgba(122, 122, 122, 0.205);
+    background-color: white;
+    border-bottom: 1px solid rgba(122, 122, 122, 0.2);
+}
+
+.nav a{
+    text-decoration: none;
+    padding: 8px 16px;
+
+}
+
+.nav p a{
+    color: rgb(255, 255, 255);
+    background-color: #0A95FF;
+    border-radius: 32px;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.nav h3{
+    color:  #0A95FF;
+}
+
+
+
+.nav a:hover{
+    opacity: 1;
+}
+
+// index
+
+.index-nav{
+    margin: 24px 0 0 0;
+    width: 1200px;
+    padding: 0 80px;
+}
+
+.index-navtext ul{
+    padding: 0;
+    width: 450px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.index-navtext li{
+    padding: 0;
+    margin: 0;
+    line-height: 3em;
+    list-style: none;
+    cursor: pointer;
+}
+
+
+.index-navtext li.active{
+    border-bottom: 2px solid black;
+    border-width: 100%;
 }
 
 .index-container{
+    margin: 0 auto;
+    padding: 32px 24.3px;
+    width: 1200px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-content: space-between;
+    position: relative;
+    gap: 24px;
+}
+
+.edit-container, .new-container{
+    margin: 16px auto;
+    width: 540px;
+    background-color: white;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.431);
+    padding: 24px;
+}
+
+textarea{
+    resize: none;
+}
+
+.edit-container input[type=submit], .new-container input[type=submit]{
+    width: 100%;
 }
 
 .flats-box li{
@@ -29,18 +117,132 @@
 }
 
 .flats-box{
-    height: 400px;
-    width: 300px;
-    margin: 16px;
-    border-radius: 24px;
+    height: 360px;
+    width: 30%;
+    margin-bottom: 56px;
+    padding: 0;
+    border-radius: 24px;    
 }
 
-div#flats-info{
-    margin-top: 8px
+#flat-info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.index-container p{
+    margin-bottom: 0;
+}
+
+.index-container a{
+    text-decoration: none;
+    color: black;
 }
 
 .flats-box img{
-    height: 300px;
+    height: 360px;
     width: 100%;
     border-radius: 24px;
+    margin-bottom: 8px;
+    object-fit: cover;
+    position: relative;
+}
+
+// show
+
+.show-container{
+    width: 100%;
+}
+
+.show-container h2{
+    font-weight: bolder;
+}
+
+.show-container #flat-image{
+    height: 75vh;
+    background-size: cover;
+    object-fit: cover;
+    background-position-y: center;
+}
+
+.show-container .flat-name{
+    position: absolute;
+    background-color: white;
+    width: 50%;
+    padding: 16px 24px;
+    top: 80%;
+    margin-left: 100px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.flat-information{
+    display: flex;
+    width: 50%;
+    margin: 15% 100px;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.flat-description{
+    width: 540px;
+    padding: 16px;
+}
+
+.flat-price{
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.431);
+    padding: 24px;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    right: 5%;
+    top: 80%;
+    border-radius: 16px;
+}
+
+.date-form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flat-price input[type=submit]{
+    width: 100%;
+    margin: 16px auto;
+    border-radius: 16px;
+}
+
+.flat-price input[type=date]{
+    width: 160px;
+    border: 1px solid rgb(167, 167, 167);
+}
+
+.flat-price input[type=date]:hover{
+    border: 1px solid rgba(23, 157, 235, 0.746);
+}
+
+.footer{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 80px;
+    border-top: 1px solid rgba(0, 0, 0, 0.075);
+    background-color: white;
+}
+
+.footer p {
+    margin: 0;
+    
+}
+.heart{
+    cursor:pointer;
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    z-index: 10;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    transform: translate(272px, 8px)
 }

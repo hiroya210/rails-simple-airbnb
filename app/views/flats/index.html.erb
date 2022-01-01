@@ -1,16 +1,31 @@
+<div class="index-nav">
+  <div class="index-navtext">
+    <ul>
+      <li class="active"><i class="far fa-building"></i> Flats</li>
+      <li><i class="fas fa-hot-tub"></i> Ryokans</li>
+      <li><i class="fas fa-umbrella-beach"></i> Beachfronts</li>
+    </ul>
+  </div>
+</div>
 <div class="index-container">
-  
     <% @flats.each do |flat| %>
         <div class="flats-box">
+        <div class= "heart">
+            🤍
+        </div>
           <%= link_to flat_path(flat) do %>
             <div>
-              <%= image_tag ("https://loremflickr.com/320/240/#{["room", "apartment", "house"].sample}") %>
+              <%= image_tag (flat.image) %>
             </div>
-            <div  id="flat-info">
+            <div id="flat-info">
               <% if flat.name.length > 15 %>
-                <p><%= flat.name.first(15) %>...
+                <p><%= flat.name.first(15) %>...</p>
               <% end %>
-                ￥<%= flat.price_per_night %> / night</p>
+                <p>￥<%= flat.price_per_night %> / night</p>
+            </div>
+            <div id="flat-info">
+                <p><i class="fas fa-users"></i> <%= flat.number_of_guest %></p>
+                <p><%= rand(1..99)%> KM away</p>
             </div>
           <% end %>
         </div>
@@ -18,7 +33,6 @@
            
            
  
-</div>
-    <%= link_to "Add new Flat", new_flat_path %>
+    </div>
 </div>
 
