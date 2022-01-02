@@ -2,6 +2,9 @@ class FlatsController < ApplicationController
 
     before_action :find_flats, only: [:show, :edit, :update, :destroy]
 
+    def home
+    end
+
     def index
       @flats = Flat.all
     end
