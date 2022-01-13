@@ -14,10 +14,11 @@
   <body>
     <div class="nav">
       <%= link_to (flats_path) do %>
+      <% params[:search_flats] = "" %>
       <h3><i class="fas fa-meteor"></i> HiroBnB</h3>
       <% end %>
       <!-- Search form -->
-      
+      <%= render "searchBar" %>
       <p><%= link_to "Add new Flat", new_flat_path %></p>
     </div>
       <%= yield %>

@@ -7,6 +7,11 @@ class FlatsController < ApplicationController
 
     def index
       @flats = Flat.all
+      unless params[:search_flats] == ""
+        @flats = @flats.where("name like ?","%#{params[:search_flats]}%")
+      else
+        @flats = Flat.all
+      end
     end
 
     def show
